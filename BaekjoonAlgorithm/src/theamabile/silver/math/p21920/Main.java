@@ -6,36 +6,38 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 
-// ¼­·Î¼Ò Æò±Õ, ½Ç¹ö 4
+// ï¿½ï¿½ï¿½Î¼ï¿½ ï¿½ï¿½ï¿½, ï¿½Ç¹ï¿½ 4
 public class Main {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		// ÀÔ·Â
+		// ï¿½Ô·ï¿½
 		/**
-		 * N : ÀÔ·ÂµÉ ¼öÀÇ °¹¼ö
-		 * ¼ö¿­ ÀÚ¿¬¼ö N°³
-		 * X : ±âÁØ ¼ýÀÚ
+		 * N : ï¿½Ô·Âµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ï¿½ï¿½ Nï¿½ï¿½
+		 * X : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		 * */
-		
+
+
+
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		// ¼ýÀÚ °¹¼ö
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int n = Integer.parseInt(br.readLine());
 		int[] arr = new int[n];
 		
-		// ¼ö¿­ ÀÔ·Â
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		for(int i=0 ; i<n ; i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		// ¼­·Î¼Ò ºñ±³ ¼ýÀÚ
+		// ï¿½ï¿½ï¿½Î¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int x = Integer.parseInt(br.readLine());
 
 		double sum = 0;
 		int cnt = 0;
 		int gcdResult = 0;
-		// ¼­·Î¼Ò : µÎ ¼öÀÇ ÃÖ´ë°ø¾à¼ö°¡ 1ÀÎ ¼ö >> a¶û b ³ª´³À» ¶§ ³ª´²Áö¸é ¾ÈµÊ		
+		// ï¿½ï¿½ï¿½Î¼ï¿½ : ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ >> aï¿½ï¿½ b ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Èµï¿½		
 		for(int i=0; i<arr.length ; i++) {
 			gcdResult = gcd(arr[i], x);
 			if( gcdResult == 1) {
@@ -44,14 +46,14 @@ public class Main {
 			} 
 		}
 		
-		// Ãâ·Â
+		// ï¿½ï¿½ï¿½
 		System.out.println(sum/cnt);
 		
 		if(br != null)  br.close();
 		
 	}
 	
-	// ÃÖ´ë °ø¾à¼ö
+	// ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static int gcd(int x, int y) {
 		int a = Math.max(x, y);
 		int b = Math.min(x, y);
